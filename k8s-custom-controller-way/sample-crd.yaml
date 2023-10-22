@@ -4,6 +4,12 @@ metadata:
   name: samples.stable.example.com
 spec:
   group: stable.example.com
+  scope: Namespaced
+  names:
+    kind: Sample
+    plural: samples
+    singular: sample
+    shortNames: ["sp"]
   versions:
     - name: v1alpha
       served: true
@@ -21,9 +27,11 @@ spec:
                   type: string
               required:
                 - message
-  scope: Namespaced
-  names:
-    kind: Sample
-    plural: samples
-    singular: sample
-    shortNames: ["sp"]
+      additionalPrinterColumns:
+        - name: message
+          type: string
+          description: message content which want to show
+          jsonPath: .spec.message
+        - name: AGE
+          type: date
+          jsonPath: .metadata.creationTimestamp
