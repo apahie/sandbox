@@ -3,6 +3,4 @@ kind: Sample
 metadata:
   name: example-cr
 spec:
-  image: my-crd-image
   message: Hello Custom Resource!
-  replicas: 1

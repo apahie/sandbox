@@ -23,10 +23,12 @@ spec:
               properties:
                 image:
                   type: string
+                  default: nginx:latest
                 message:
                   type: string
                 replicas:
                   type: integer
+                  default: 1
               required:
                 - message
       additionalPrinterColumns:
