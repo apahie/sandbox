@@ -1,0 +1,7 @@
+apiVersion: stable.example.com/v1alpha
+kind: Sample
+metadata:
+  name: example-cr
+spec:
+  image: my-crd-image
+  message: Hello Custom Resource!
