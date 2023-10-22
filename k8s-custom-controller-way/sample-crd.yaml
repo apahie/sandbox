@@ -25,6 +25,8 @@ spec:
                   type: string
                 message:
                   type: string
+                replicas:
+                  type: integer
               required:
                 - message
       additionalPrinterColumns:
@@ -35,3 +37,9 @@ spec:
         - name: AGE
           type: date
           jsonPath: .metadata.creationTimestamp
+      subresources:
+        status: {}
+        scale:
+          specReplicasPath: .spec.replicas
+          statusReplicasPath: .status.replicas
+          labelSelectorPath: .spec.selector
